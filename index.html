@@ -490,9 +490,17 @@
             opacity: 0;
             pointer-events: none;
         }
+        @keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
+        .hero-hidden { opacity: 0 !important; pointer-events: none !important; }
+        .hero-visible { opacity: 1 !important; pointer-events: auto !important; transition: opacity 0.7s; }
     </style>
 </head>
 <body>
+    <!-- Loading Spinner -->
+    <div id="leo-loader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;background:#4e7459;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">
+      <div style="width:64px;height:64px;border:8px solid #FFD700;border-top:8px solid #F28C38;border-radius:50%;animation:spin 1s linear infinite;"></div>
+    </div>
+    
     <!-- Navigation -->
     <nav class="fixed w-full z-50 py-4 px-6 flex justify-between items-center" style="background: linear-gradient(90deg, #3e5c47 60%, #6e8c6a 100%);">
         <div class="logo flex items-center">
@@ -527,7 +535,7 @@
     </div>
     
     <!-- Page 1: Hero/Landing -->
-    <section id="home" class="relative flex flex-col items-center justify-center min-h-screen pt-8 overflow-hidden" style="min-height: 100vh; background: url('./bg3.jpg') center center / cover no-repeat;">
+    <section id="home" class="relative flex flex-col items-center justify-center min-h-screen pt-8 overflow-hidden hero-hidden" style="min-height: 100vh; background: url('./bg3.jpg') center center / cover no-repeat;">
         <!-- Socials -->
         <div class="tilted-socials animated-popInLeft animated-delay-2">
             <a href="https://x.com/leolemursol" target="_blank" class="tilted-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -558,6 +566,22 @@
         }
         </style>
         <script>
+        // Wait for background image to load before showing hero section
+        window.addEventListener('DOMContentLoaded', function() {
+          var bgUrl = './bg3.jpg';
+          var img = new window.Image();
+          var heroSection = document.getElementById('home');
+          var loader = document.getElementById('leo-loader');
+          img.onload = function() {
+            loader.style.opacity = 0;
+            setTimeout(function() {
+              loader.style.display = 'none';
+              heroSection.classList.remove('hero-hidden');
+              heroSection.classList.add('hero-visible');
+            }, 500);
+          };
+          img.src = bgUrl;
+        });
         // After entrance animation, add side-to-side swaying effect
         window.addEventListener('DOMContentLoaded', function() {
           var lemur = document.getElementById('lemur-hero');
