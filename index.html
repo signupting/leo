@@ -383,8 +383,8 @@
             animation: lemur-float 3s ease-in-out infinite;
         }
         @keyframes lemur-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-18px) scale(1.04); }
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-18px); }
         }
         .logo-spin {
             animation: logo-spin 6s linear infinite;
@@ -468,6 +468,28 @@
         .animated-delay-3 { animation-delay: 0.6s; }
         .animated-delay-4 { animation-delay: 0.8s; }
         .animated-delay-5 { animation-delay: 1s; }
+        @keyframes shake {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            10% { transform: translate(-8px, -4px) rotate(-3deg); }
+            20% { transform: translate(7px, 6px) rotate(2deg); }
+            30% { transform: translate(-5px, 8px) rotate(-2deg); }
+            40% { transform: translate(6px, -7px) rotate(3deg); }
+            50% { transform: translate(-9px, 5px) rotate(-1deg); }
+            60% { transform: translate(8px, -6px) rotate(2deg); }
+            70% { transform: translate(-6px, 7px) rotate(-2deg); }
+            80% { transform: translate(5px, -8px) rotate(3deg); }
+            90% { transform: translate(-7px, 4px) rotate(-2deg); }
+        }
+        .shake-animation {
+            animation: shake 1.2s cubic-bezier(.36,.07,.19,.97) infinite both;
+        }
+        #lemur-hero {
+            transition: opacity 0.6s cubic-bezier(.36,.07,.19,.97);
+        }
+        #lemur-hero.hide-on-scroll {
+            opacity: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -511,17 +533,48 @@
             <a href="https://x.com/leolemursol" target="_blank" class="tilted-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             <a href="https://t.me/leothelemur" target="_blank" class="tilted-btn" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
         </div>
-        <!-- Main Content -->
-        <div class="z-10 flex flex-col items-center justify-center fade-in visible w-full" style="position:relative;z-index:2;max-width:700px;margin:0 auto;">
-            <div style="position: relative; display: flex; justify-content: center; align-items: center; width: 100%; margin-bottom: 1.5rem;">
-                <img src="./hero-image (1).svg" alt="$LEO Hero" class="animated-bounceIn" style="width: 480px; max-width: 98vw; height: auto; display: block; background: none; padding: 0; margin: 0; border: none; border-radius: 0; z-index: 2; position: relative; animation-delay: 0.1s;" />
-            </div>
-            <h1 class="leo-heading text-7xl md:text-8xl font-bold mb-2 pulse-animation animated-fadeInUp animated-delay-2" style="font-size: 4.5rem !important; margin-top: 0;">$LEO</h1>
+        <!-- Main Content: Centered Text -->
+        <div class="z-10 flex flex-col items-center justify-center fade-in visible w-full" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); max-width:700px; margin:0 auto; text-align:center;">
+            <h1 class="leo-heading text-7xl md:text-8xl font-bold mb-2 pulse-animation animated-fadeInUp animated-delay-2 shake-animation" style="font-size: 6rem !important; margin-top: -1.5rem; margin-bottom: 0.5rem;">$LEO</h1>
             <p class="text-3xl md:text-4xl mb-6 text-outline animated-fadeInUp animated-delay-3" style="font-size: 2rem !important;">The King of the Jungle Meme Coins</p>
             <a href="#about" class="shimmer cta-glow inline-block orange-gradient text-black font-bold py-5 px-16 rounded-full text-3xl shadow-lg transition transform hover:scale-110 hover:shadow-2xl mb-4 animated-fadeInUp animated-delay-4" style="font-size: 1.7rem !important;">
                 Join the #LEO army
             </a>
         </div>
+        <!-- Lemur Image: Animated from bottom -->
+        <img id="lemur-hero" src="./hero-image (1).svg" alt="$LEO Hero" style="position: fixed; left: 50%; transform: translateX(-50%) translateY(100%); bottom: 0; width: 600px; max-width: 98vw; height: auto; z-index: 3; background: none; padding: 0; margin: 0; border: none; border-radius: 0; animation: lemur-rise 7s cubic-bezier(.23,1.01,.32,1) forwards;" />
+        <style>
+        @keyframes lemur-rise {
+            0% { transform: translateX(-50%) translateY(100%); opacity: 0; }
+            60% { opacity: 1; }
+            100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+        }
+        @keyframes lemur-sway {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-46%) translateY(0); }
+        }
+        @media (max-width: 768px) {
+            #lemur-hero { width: 98vw !important; }
+        }
+        </style>
+        <script>
+        // After entrance animation, add side-to-side swaying effect
+        window.addEventListener('DOMContentLoaded', function() {
+          var lemur = document.getElementById('lemur-hero');
+          lemur.addEventListener('animationend', function() {
+            lemur.style.animation = 'lemur-sway 3.5s ease-in-out infinite';
+          }, { once: true });
+        });
+        // Hide lemur image on scroll
+        window.addEventListener('scroll', function() {
+            var lemur = document.getElementById('lemur-hero');
+            if (window.scrollY > 100) {
+                lemur.classList.add('hide-on-scroll');
+            } else {
+                lemur.classList.remove('hide-on-scroll');
+            }
+        });
+        </script>
         <!-- Sparkles -->
         <div class="absolute inset-0 pointer-events-none z-0">
             <div class="sparkle" style="top: 12%; left: 18%; animation-delay: 0.1s;"></div>
