@@ -519,11 +519,13 @@
     
     <!-- Page 1: Hero/Landing -->
     <section id="home" class="relative flex flex-col items-center justify-center min-h-screen pt-8 overflow-hidden hero-hidden" style="min-height: 100vh; background: url('./bg4.jpg') center center / cover no-repeat;">
-        <!-- Socials: Move to top center -->
-        <div style="position: absolute; left: 50%; top: 2.5rem; transform: translateX(-50%); z-index: 50; display: flex; gap: 1.5rem;">
+        <!-- Socials: Move further down, still centered -->
+        <div style="position: absolute; left: 50%; top: 10rem; transform: translateX(-50%); z-index: 50; display: flex; gap: 1.5rem;">
             <img src="./twitter-button.png" alt="Twitter" style="width: 90px; height: auto; transform: rotate(-12deg); cursor: pointer; transition: transform 0.2s;" onclick="window.open('https://x.com/leolemursol', '_blank')" />
             <img src="./telegram-button.png" alt="Telegram" style="width: 90px; height: auto; transform: rotate(12deg); cursor: pointer; transition: transform 0.2s;" onclick="window.open('https://t.me/leothelemur', '_blank')" />
         </div>
+        <!-- Add LEO Army button, top left under logo -->
+        <img src="./leo-army-button.png" alt="Join the LEO Army" style="position: absolute; top: 6.5rem; left: 2.5rem; width: 320px; height: auto; z-index: 50; cursor: pointer; transition: transform 0.2s;" onclick="window.location.href='#about'" />
         <!-- Lemur Image: Centered, moved up, no animation -->
         <div style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, 0); z-index: 3; width: 100%; display: flex; justify-content: center;">
             <img id="lemur-hero" src="./hero-img.png" alt="$LEO Hero" style="width: 600px; max-width: 98vw; height: auto; background: none; padding: 0; margin: 0; border: none; border-radius: 0; opacity: 1;" />
