@@ -243,70 +243,56 @@
         }
         
         /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .text-outline {
-                text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            }
-            
-            .bounce-animation {
-                animation: bounce 2s infinite;
-                animation-duration: 1.5s;
-            }
-            
-            .section-height {
-                min-height: 100vh;
-            }
+        @media (max-width: 480px) {
             .hero-img-glow, .animated-bounceIn, .z-10 img[alt="$LEO Hero"] {
-                width: 90vw !important;
-                max-width: 95vw !important;
-                min-width: 0 !important;
+                width: 98vw !important;
+                max-width: 98vw !important;
             }
             .leo-heading {
-                font-size: 2.2rem !important;
-                -webkit-text-stroke: 1px var(--madagascar-yellow);
+                font-size: 1.3rem !important;
+                -webkit-text-stroke: 0.5px var(--madagascar-yellow);
             }
             .text-3xl, .md\:text-4xl, .text-4xl, .md\:text-6xl {
-                font-size: 1.2rem !important;
+                font-size: 0.95rem !important;
             }
             .shimmer.cta-glow, .shimmer.cta-glow.inline-block {
-                font-size: 1rem !important;
-                padding: 0.8rem 1.2rem !important;
+                font-size: 0.8rem !important;
+                padding: 0.6rem 0.8rem !important;
             }
             .tilted-socials {
-                left: 0.5rem;
-                bottom: 0.5rem;
-                gap: 0.7rem;
+                left: 0.2rem;
+                bottom: 0.2rem;
+                gap: 0.4rem;
             }
             .tilted-btn {
-                width: 38px;
-                height: 38px;
-                font-size: 1.1rem;
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
             }
             .w-96, .h-96 {
-                width: 90vw !important;
+                width: 98vw !important;
                 height: auto !important;
-                min-width: 0 !important;
             }
             .step-box {
-                padding: 1rem !important;
-                font-size: 1rem !important;
+                padding: 0.5rem !important;
+                font-size: 0.8rem !important;
             }
             .meme-card {
-                padding: 0.5rem !important;
-            }
-            .grid-cols-1, .md\:grid-cols-2, .sm\:grid-cols-2, .lg\:grid-cols-3 {
-                grid-template-columns: 1fr !important;
+                padding: 0.2rem !important;
             }
             .container {
-                padding-left: 0.5rem !important;
-                padding-right: 0.5rem !important;
+                padding-left: 0.2rem !important;
+                padding-right: 0.2rem !important;
             }
             nav {
                 flex-direction: column;
-                padding: 0.5rem 0.5rem !important;
+                padding: 0.2rem 0.2rem !important;
             }
             .logo {
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.2rem;
+            }
+            .grid-cols-1, .md\:grid-cols-2, .sm\:grid-cols-2, .lg\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
             }
         }
 
