@@ -509,38 +509,13 @@
       <div style="width:64px;height:64px;border:8px solid #FFD700;border-top:8px solid #F28C38;border-radius:50%;animation:spin 1s linear infinite;"></div>
     </div>
     
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 py-4 px-6 flex justify-between items-center" style="background: linear-gradient(90deg, #3e5c47 60%, #6e8c6a 100%);">
-        <div class="logo flex items-center">
+    <!-- Navigation: Only show logo/thumbnail in top left, remove menu -->
+    <nav class="fixed w-full z-50 py-4 px-6 flex items-start" style="background: none; box-shadow: none;">
+        <div class="logo flex items-center" style="position: absolute; top: 1rem; left: 1rem; z-index: 100;">
             <img src="./leo-thumbnail.jpg" alt="$LEO Thumbnail" class="w-14 h-14 mr-2 rounded-full border-4 border-yellow-400 shadow-lg object-cover logo-spin" />
             <span class="text-2xl font-bold text-outline">$LEO</span>
         </div>
-        
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-6">
-            <a href="#home" class="nav-link text-white font-bold">Home</a>
-            <a href="#about" class="nav-link text-white font-bold">About</a>
-            <a href="#how-to-buy" class="nav-link text-white font-bold">How to Buy</a>
-            <a href="#memes" class="nav-link text-white font-bold">Memes</a>
-        </div>
-        
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-white">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
     </nav>
-    
-    <!-- Mobile Menu (Hidden by default) -->
-    <div id="mobile-menu" class="hidden fixed z-40 w-full bg-green-800 mt-16" style="background-color: rgba(74,120,86,0.95);">
-        <div class="flex flex-col items-center py-4">
-            <a href="#home" class="nav-link text-white font-bold py-2">Home</a>
-            <a href="#about" class="nav-link text-white font-bold py-2">About</a>
-            <a href="#how-to-buy" class="nav-link text-white font-bold py-2">How to Buy</a>
-            <a href="#memes" class="nav-link text-white font-bold py-2">Memes</a>
-        </div>
-    </div>
     
     <!-- Page 1: Hero/Landing -->
     <section id="home" class="relative flex flex-col items-center justify-center min-h-screen pt-8 overflow-hidden hero-hidden" style="min-height: 100vh; background: url('./bg4.jpg') center center / cover no-repeat;">
@@ -615,6 +590,8 @@
             <div class="sparkle" style="top: 30%; left: 10%; animation-delay: 0.9s;"></div>
             <div class="sparkle" style="top: 65%; left: 60%; animation-delay: 1.3s;"></div>
         </div>
+        <!-- Add floating image button to hero page -->
+        <img src="./how-to-buy-button.png" alt="How to Buy" style="position: absolute; bottom: 2.5rem; right: 2.5rem; width: 120px; height: auto; z-index: 50; cursor: pointer; transition: transform 0.2s;" onclick="window.location.href='#how-to-buy'" />
     </section>
     
     <!-- Page 2: About -->
