@@ -520,9 +520,9 @@
     <!-- Page 1: Hero/Landing -->
     <section id="home" class="relative flex flex-col items-center justify-center min-h-screen pt-8 overflow-hidden hero-hidden" style="min-height: 100vh; background: url('./bg4.jpg') center center / cover no-repeat;">
         <!-- Socials -->
-        <div class="tilted-socials animated-popInLeft animated-delay-2">
-            <a href="https://x.com/leolemursol" target="_blank" class="tilted-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://t.me/leothelemur" target="_blank" class="tilted-btn" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        <div style="position: absolute; left: 50%; bottom: 2.5rem; transform: translateX(-50%); z-index: 50; display: flex; gap: 1.5rem;">
+            <img src="./twitter-button.png" alt="Twitter" style="width: 90px; height: auto; transform: rotate(-12deg); cursor: pointer; transition: transform 0.2s;" onclick="window.open('https://x.com/leolemursol', '_blank')" />
+            <img src="./telegram-button.png" alt="Telegram" style="width: 90px; height: auto; transform: rotate(12deg); cursor: pointer; transition: transform 0.2s;" onclick="window.open('https://t.me/leothelemur', '_blank')" />
         </div>
         <!-- Lemur Image: Centered, moved up, no animation -->
         <div style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, 0); z-index: 3; width: 100%; display: flex; justify-content: center;">
