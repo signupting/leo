@@ -493,6 +493,18 @@
         @keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
         .hero-hidden { opacity: 0 !important; pointer-events: none !important; }
         .hero-visible { opacity: 1 !important; pointer-events: auto !important; transition: opacity 0.7s; }
+        @keyframes lemurFadeFlicker {
+            0% { opacity: 0; filter: brightness(1.5); }
+            20% { opacity: 0.7; filter: brightness(1.2); }
+            40% { opacity: 1; filter: brightness(1.1); }
+            50% { opacity: 0.8; filter: brightness(1.3); }
+            60% { opacity: 1; filter: brightness(1.2); }
+            80% { opacity: 0.95; filter: brightness(1.1); }
+            100% { opacity: 1; filter: brightness(1); }
+        }
+        .lemur-fade-flicker {
+            animation: lemurFadeFlicker 2.2s cubic-bezier(.36,.07,.19,.97) 0.5s both;
+        }
     </style>
 </head>
 <body>
@@ -541,24 +553,26 @@
             <a href="https://x.com/leolemursol" target="_blank" class="tilted-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             <a href="https://t.me/leothelemur" target="_blank" class="tilted-btn" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
         </div>
-        <!-- Lemur Image: Animated from bottom -->
-        <img id="lemur-hero" src="./hero-img.png" alt="$LEO Hero" style="position: fixed; left: 50%; transform: translateX(-50%) translateY(100%); bottom: 0; width: 600px; max-width: 98vw; height: auto; z-index: 3; background: none; padding: 0; margin: 0; border: none; border-radius: 0; animation: lemur-rise 7s cubic-bezier(.23,1.01,.32,1) forwards;" />
+        <!-- Lemur Image: Centered, moved up, fade-flicker animation -->
+        <div style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, 0); z-index: 3; width: 100%; display: flex; justify-content: center;">
+            <img id="lemur-hero" src="./hero-img.png" alt="$LEO Hero" class="lemur-fade-flicker" style="width: 600px; max-width: 98vw; height: auto; background: none; padding: 0; margin: 0; border: none; border-radius: 0; opacity: 0;" />
+        </div>
         <!-- Main Content: Centered Text -->
         <div class="z-10 flex flex-col items-center justify-center fade-in visible w-full" style="position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%); max-width:700px; margin:0 auto; text-align:center;">
             <!-- Headings and Button Temporarily Removed from Hero Section -->
         </div>
         <style>
-        @keyframes lemur-rise {
-            0% { transform: translateX(-50%) translateY(100%); opacity: 0; }
-            60% { opacity: 1; }
-            100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+        @keyframes lemurFadeFlicker {
+            0% { opacity: 0; filter: brightness(1.5); }
+            20% { opacity: 0.7; filter: brightness(1.2); }
+            40% { opacity: 1; filter: brightness(1.1); }
+            50% { opacity: 0.8; filter: brightness(1.3); }
+            60% { opacity: 1; filter: brightness(1.2); }
+            80% { opacity: 0.95; filter: brightness(1.1); }
+            100% { opacity: 1; filter: brightness(1); }
         }
-        @keyframes lemur-sway {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-46%) translateY(0); }
-        }
-        @media (max-width: 768px) {
-            #lemur-hero { width: 98vw !important; }
+        .lemur-fade-flicker {
+            animation: lemurFadeFlicker 2.2s cubic-bezier(.36,.07,.19,.97) 0.5s both;
         }
         </style>
         <script>
