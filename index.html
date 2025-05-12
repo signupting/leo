@@ -625,6 +625,35 @@
             font-weight: bold !important;
             text-shadow: 0 2px 8px #000a, 0 0 2px #fff2;
         }
+        @keyframes bill-fall {
+            0% { top: -120px; left: var(--bill-x); transform: rotate(-20deg) scale(1.1); opacity: 0; }
+            10% { opacity: 1; }
+            100% { top: 110vh; left: calc(var(--bill-x) + 40px); transform: rotate(18deg) scale(1.1); opacity: 0.7; }
+        }
+        .falling-bill {
+            position: absolute;
+            width: 64px;
+            height: 32px;
+            z-index: 10;
+            pointer-events: none;
+            animation: bill-fall 5.5s linear infinite;
+        }
+        .falling-bill.bill-1 { --bill-x: 10vw; animation-delay: 0s; }
+        .falling-bill.bill-2 { --bill-x: 30vw; animation-delay: 1.2s; }
+        .falling-bill.bill-3 { --bill-x: 55vw; animation-delay: 2.1s; }
+        .falling-bill.bill-4 { --bill-x: 75vw; animation-delay: 3.3s; }
+        .falling-bill.bill-5 { --bill-x: 90vw; animation-delay: 4.1s; }
+        @media (max-width: 480px) {
+            .leo-heading {
+                font-size: 2.1rem !important;
+                position: relative;
+                z-index: 20;
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+                background: none !important;
+                display: block !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -759,6 +788,32 @@
                 </div>
             </div>
         </div>
+        <!-- Falling $100 bills for About section -->
+        <style>
+        @keyframes bill-fall {
+            0% { top: -120px; left: var(--bill-x); transform: rotate(-20deg) scale(1.1); opacity: 0; }
+            10% { opacity: 1; }
+            100% { top: 110vh; left: calc(var(--bill-x) + 40px); transform: rotate(18deg) scale(1.1); opacity: 0.7; }
+        }
+        .falling-bill {
+            position: absolute;
+            width: 64px;
+            height: 32px;
+            z-index: 10;
+            pointer-events: none;
+            animation: bill-fall 5.5s linear infinite;
+        }
+        .falling-bill.bill-1 { --bill-x: 10vw; animation-delay: 0s; }
+        .falling-bill.bill-2 { --bill-x: 30vw; animation-delay: 1.2s; }
+        .falling-bill.bill-3 { --bill-x: 55vw; animation-delay: 2.1s; }
+        .falling-bill.bill-4 { --bill-x: 75vw; animation-delay: 3.3s; }
+        .falling-bill.bill-5 { --bill-x: 90vw; animation-delay: 4.1s; }
+        </style>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/US_$100_bill_-_obverse.jpg" alt="$100 bill" class="falling-bill bill-1" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/US_$100_bill_-_obverse.jpg" alt="$100 bill" class="falling-bill bill-2" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/US_$100_bill_-_obverse.jpg" alt="$100 bill" class="falling-bill bill-3" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/US_$100_bill_-_obverse.jpg" alt="$100 bill" class="falling-bill bill-4" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/US_$100_bill_-_obverse.jpg" alt="$100 bill" class="falling-bill bill-5" />
     </section>
     
     <!-- Page 3: How to Buy -->
@@ -838,6 +893,7 @@
             </h2>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto fade-in visible">
+                <!-- Meme images will be randomized by JavaScript -->
                 <!-- Meme Cards -->
                 <div class="meme-card bg-white p-2 rounded-xl shadow-lg border-2 border-black animated-fadeInUp animated-delay-1">
                     <img src="./memes/meme-1.jpeg" alt="Meme 1" class="w-full h-full object-contain rounded-lg" />
