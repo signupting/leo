@@ -562,6 +562,34 @@
         .wow-delay-2 { animation-delay: 0.35s; }
         .wow-delay-3 { animation-delay: 0.55s; }
         .wow-delay-4 { animation-delay: 0.75s; }
+        /* --- Hero Image Animations --- */
+        @keyframes heroPopIn {
+            0% { opacity: 0; transform: scale(0.7) translateY(80px) rotate(-8deg); }
+            60% { opacity: 1; transform: scale(1.08) translateY(-10px) rotate(5deg); }
+            100% { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
+        }
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-18px) scale(1.04); }
+        }
+        @keyframes heroGlow {
+            0%, 100% { filter: drop-shadow(0 0 24px #FFD70088); }
+            50% { filter: drop-shadow(0 0 48px #F28C38cc); }
+        }
+        .hero-wow-popin {
+            animation: heroPopIn 1.2s cubic-bezier(.23,1.01,.32,1) both;
+        }
+        .hero-wow-float {
+            animation: heroFloat 2.8s infinite cubic-bezier(.23,1.01,.32,1);
+        }
+        .hero-wow-glow {
+            animation: heroGlow 2.2s infinite alternate;
+        }
+        .hero-wow-hover:hover {
+            transform: scale(1.07) rotate(-4deg) !important;
+            filter: brightness(1.12) drop-shadow(0 0 16px #FFD700cc);
+            transition: transform 0.18s, filter 0.18s;
+        }
     </style>
 </head>
 <body>
@@ -588,7 +616,7 @@
         <img src="./leo-army-button.png" alt="Join the LEO Army" class="hero-btn hero-btn-army wow-entrance wow-sway wow-hover wow-delay-4" style="position: absolute; top: 6.5rem; left: 2.5rem; width: 320px; height: auto; z-index: 50; cursor: pointer; transition: transform 0.2s;" onclick="window.location.href='#about'" />
         <!-- Lemur Image: Centered, moved up, no animation -->
         <div style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, 0); z-index: 3; width: 100%; display: flex; justify-content: center;">
-            <img id="lemur-hero" src="./hero-img.png" alt="$LEO Hero" style="width: 600px; max-width: 98vw; height: auto; background: none; padding: 0; margin: 0; border: none; border-radius: 0; opacity: 1;" />
+            <img id="lemur-hero" src="./hero-img.png" alt="$LEO Hero" class="hero-wow-popin hero-wow-float hero-wow-glow hero-wow-hover" style="width: 600px; max-width: 98vw; height: auto; background: none; padding: 0; margin: 0; border: none; border-radius: 0; opacity: 1;" />
         </div>
         <!-- Main Content: Centered Text -->
         <div class="z-10 flex flex-col items-center justify-center fade-in visible w-full" style="position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%); max-width:700px; margin:0 auto; text-align:center;">
