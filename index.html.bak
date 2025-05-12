@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$LEO - Jungle Meme Coin</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <style>
+        :root {
+            --jungle-green: #5E8C6A;
+            --madagascar-orange: #F28C38;
+            --madagascar-yellow: #FFD700;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Luckiest Guy', cursive;
+            background-color: #4e7459;
+            color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            font-size: 22px;
+            background-image: url('https://www.transparenttextures.com/patterns/leaf.png');
+            background-repeat: repeat;
+            background-size: 340px;
+        }
+        
+        .text-outline {
+            text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        }
+        
+        /* Hero section styling */
+        #home {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('./bg4.jpg') center center / cover no-repeat;
+        }
+        
+        #lemur-hero {
+            width: 600px;
+            max-width: 98vw;
+            height: auto;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-button {
+            position: absolute;
+            z-index: 50;
+            cursor: pointer;
+            width: 320px;
+            height: auto;
+        }
+        
+        #how-to-buy-btn {
+            bottom: 2.5rem;
+            right: 2.5rem;
+        }
+        
+        #about-btn {
+            bottom: 2.5rem;
+            left: 2.5rem;
+        }
+        
+        #meme-btn {
+            top: 2.5rem;
+            right: 2.5rem;
+        }
+        
+        #leo-army-btn {
+            top: 6.5rem;
+            left: 2.5rem;
+        }
+        
+        #social-btns {
+            position: absolute;
+            left: 50%;
+            top: 10rem;
+            transform: translateX(-50%);
+            z-index: 50;
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .social-btn {
+            width: 90px;
+            height: auto;
+            cursor: pointer;
+        }
+        
+        #twitter-btn {
+            transform: rotate(-12deg);
+        }
+        
+        #telegram-btn {
+            transform: rotate(12deg);
+        }
+        
+        /* Animation for lemur */
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-15px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .nav-button {
+                width: 200px;
+            }
+            
+            #lemur-hero {
+                width: 85vw;
+                max-width: 400px;
+            }
+            
+            .social-btn {
+                width: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Hero/Landing -->
+    <section id="home">
+        <!-- Logo in top left -->
+        <div class="logo">
+            <img src="./leo-thumbnail.jpg" alt="$LEO Thumbnail" class="w-14 h-14 mr-2 rounded-full border-4 border-yellow-400 shadow-lg object-cover" />
+            <span class="text-2xl font-bold text-outline">$LEO</span>
+        </div>
+        
+        <!-- Lemur Image -->
+        <img id="lemur-hero" src="./hero-img.png" alt="$LEO Hero" class="floating" />
+        
+        <!-- Navigation Buttons -->
+        <img id="how-to-buy-btn" class="nav-button" src="./how-to-buy-button.png" alt="How to Buy" onclick="window.location.href='#how-to-buy'" />
+        <img id="about-btn" class="nav-button" src="./about-button.png" alt="About" onclick="window.location.href='#about'" />
+        <img id="meme-btn" class="nav-button" src="./memebutton.png" alt="Memes" onclick="window.location.href='#memes'" />
+        <img id="leo-army-btn" class="nav-button" src="./leo-army-button.png" alt="Join the LEO Army" onclick="window.location.href='#about'" />
+        
+        <!-- Social Buttons -->
+        <div id="social-btns">
+            <img id="twitter-btn" class="social-btn" src="./twitter-button.png" alt="Twitter" onclick="window.open('https://x.com/leolemursol', '_blank')" />
+            <img id="telegram-btn" class="social-btn" src="./telegram-button.png" alt="Telegram" onclick="window.open('https://t.me/leothelemur', '_blank')" />
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="relative min-h-screen pt-24 pb-16 jungle-bg overflow-hidden" style="background: url('./page2-bg.jpg') center center / cover no-repeat;">
+        <div class="container mx-auto px-4">
+            <h2 class="leo-heading text-6xl md:text-8xl font-bold text-left mb-12 fade-in visible animated-fadeInUp" style="font-size: 4rem !important; animation-delay: 0.1s;">Who is $LEO the Lemur?</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8 fade-in visible">
+                <!-- Left side: Visual -->
+                <div class="w-full md:w-1/2 flex flex-col items-center justify-center">
+                    <img src="./page2.png" alt="$LEO Sniffing Green Powder" class="w-96 h-96 object-contain floating-lemur animated-bounceIn animated-delay-2" style="background:none;box-shadow:none;padding:0;margin:0;border-radius:0;animation-delay:0.2s;" />
+                    <div class="mt-8 w-full flex justify-center">
+                        <a href="https://twitter.com" target="_blank" class="shimmer cta-glow inline-block orange-gradient text-black font-bold py-6 px-16 rounded-full transition transform hover:scale-110 hover:shadow-xl text-3xl animated-fadeInUp animated-delay-4" style="font-size: 2.2rem;">
+                            Join $LEO on his journey
+                        </a>
+                    </div>
+                </div>
+                <!-- Right side: Text -->
+                <div class="w-full md:w-1/2 text-white flex items-center">
+                    <div class="bg-black bg-opacity-20 p-8 rounded-xl animated-fadeInUp animated-delay-3" style="font-size: 2rem; line-height: 1.5;">
+                        <p class="mb-8">
+                            $LEO is the biggest baller in the jungle, with a taste for the finer things in life—gold chains, fast cars, and memecoins.
+                        </p>
+                        <p class="mb-8">
+                            His lavish spending habits and desire for fame have led him to launch his own coin.
+                        </p>
+                        <p class="mb-8">
+                            Not just any lemur, $LEO rides with the biggest apes in the crypto jungle and is destined to be the next 100x gem.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How to Buy Section -->
+    <section id="how-to-buy" class="relative min-h-screen pt-24 pb-16 jungle-bg overflow-hidden">
+        <div class="container mx-auto px-4 z-10 relative">
+            <h2 class="leo-heading text-4xl md:text-6xl font-bold text-center mb-12 fade-in visible animated-fadeInUp" style="font-size: 4rem !important; animation-delay: 0.1s;">
+                How to Buy $LEO
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto fade-in visible">
+                <!-- Step 1 -->
+                <div class="step-box bg-white text-black p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-1">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 orange-gradient rounded-full flex items-center justify-center text-black font-bold border-2 border-black">1</div>
+                    <h3 class="text-xl font-bold mb-3">Create a Wallet</h3>
+                    <p>Download Metamask or your favorite Web3 wallet. Create an account and secure your recovery phrase.</p>
+                    <div class="mt-4 text-center">
+                        <i class="fas fa-wallet text-3xl text-green-700"></i>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="step-box bg-white text-black p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-2">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 orange-gradient rounded-full flex items-center justify-center text-black font-bold border-2 border-black">2</div>
+                    <h3 class="text-xl font-bold mb-3">Get ETH</h3>
+                    <p>Purchase Ethereum from your preferred exchange and transfer it to your wallet address.</p>
+                    <div class="flex justify-center items-center mt-6">
+                        <img src="./eth.png" alt="Ethereum" class="w-24 h-24 object-contain animated-bounceIn animated-delay-3" style="background:none;box-shadow:none;padding:0;margin:0;border-radius:0;animation-delay:0.2s;" />
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="step-box bg-white text-black p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-3">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 orange-gradient rounded-full flex items-center justify-center text-black font-bold border-2 border-black">3</div>
+                    <h3 class="text-xl font-bold mb-3">Connect to DEX</h3>
+                    <p>Visit Uniswap and connect your wallet. Paste the $LEO contract address and set your slippage to 5%.</p>
+                    <div class="mt-4 text-center">
+                        <i class="fas fa-exchange-alt text-3xl text-pink-600"></i>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="step-box bg-white text-black p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-4">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 orange-gradient rounded-full flex items-center justify-center text-black font-bold border-2 border-black">4</div>
+                    <h3 class="text-xl font-bold mb-3">Swap & HODL!</h3>
+                    <p>Swap your ETH for $LEO tokens and hodl on tight for the jungle ride to riches!</p>
+                    <div class="flex justify-center items-center mt-6">
+                        <img src="./lambo.png" alt="$LEO Jumping into Lambo" class="w-24 h-24 object-contain animated-bounceIn animated-delay-5" style="background:none;box-shadow:none;padding:0;margin:0;border-radius:0;animation-delay:0.3s;" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in visible">
+                <div class="orange-gradient inline-block px-8 py-4 rounded-xl text-black font-bold text-xl shimmer">
+                    Contract: 0xLE0...dead
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Memes Section -->
+    <section id="memes" class="relative min-h-screen pt-24 pb-32 jungle-bg overflow-hidden">
+        <div class="container mx-auto px-4">
+            <h2 class="leo-heading text-4xl md:text-6xl font-bold text-center mb-12 fade-in visible animated-fadeInUp" style="font-size: 4rem !important; animation-delay: 0.1s;">
+                $LEO Meme Jungle
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto fade-in visible">
+                <!-- Meme Cards -->
+                <div class="meme-card bg-white p-2 rounded-xl shadow-lg border-2 border-black animated-fadeInUp animated-delay-1">
+                    <div class="w-full bg-gray-200 rounded-lg aspect-square flex items-center justify-center">
+                        <span class="text-black font-bold">[MEME 1 PLACEHOLDER]</span>
+                    </div>
+                </div>
+                <div class="meme-card bg-white p-2 rounded-xl shadow-lg border-2 border-black animated-fadeInUp animated-delay-2">
+                    <div class="w-full bg-gray-200 rounded-lg aspect-square flex items-center justify-center">
+                        <span class="text-black font-bold">[MEME 2 PLACEHOLDER]</span>
+                    </div>
+                </div>
+                <div class="meme-card bg-white p-2 rounded-xl shadow-lg border-2 border-black animated-fadeInUp animated-delay-3">
+                    <div class="w-full bg-gray-200 rounded-lg aspect-square flex items-center justify-center">
+                        <span class="text-black font-bold">[MEME 3 PLACEHOLDER]</span>
+                    </div>
+                </div>
+                <div class="meme-card bg-white p-2 rounded-xl shadow-lg border-2 border-black animated-fadeInUp animated-delay-4">
+                    <div class="w-full bg-gray-200 rounded-lg aspect-square flex items-center justify-center">
+                        <span class="text-black font-bold">[MEME 4 PLACEHOLDER]</span>
+                    </div>
+                </div>
+                <div class="meme-card bg-white p-2 rounded-xl shadow-lg border-2 border-black animated-fadeInUp animated-delay-5">
+                    <div class="w-full bg-gray-200 rounded-lg aspect-square flex items-center justify-center">
+                        <span class="text-black font-bold">[MEME 5 PLACEHOLDER]</span>
+                    </div>
+                </div>
+                <div class="meme-card bg-white p-2 rounded-xl shadow-lg border-2 border-black animated-fadeInUp animated-delay-1">
+                    <div class="w-full bg-gray-200 rounded-lg aspect-square flex items-center justify-center">
+                        <span class="text-black font-bold">[MEME 6 PLACEHOLDER]</span>
+                    </div>
+                </div>
+                <div class="meme-card bg-white p-2 rounded-xl shadow-lg border-2 border-black animated-fadeInUp animated-delay-2">
+                    <div class="w-full bg-gray-200 rounded-lg aspect-square flex items-center justify-center">
+                        <span class="text-black font-bold">[MEME 7 PLACEHOLDER]</span>
+                    </div>
+                </div>
+                <div class="meme-card bg-white p-2 rounded-xl shadow-lg border-2 border-black animated-fadeInUp animated-delay-3">
+                    <div class="w-full bg-gray-200 rounded-lg aspect-square flex items-center justify-center">
+                        <span class="text-black font-bold">[MEME 8 PLACEHOLDER]</span>
+                    </div>
+                </div>
+                <div class="meme-card bg-white p-2 rounded-xl shadow-lg border-2 border-black animated-fadeInUp animated-delay-4">
+                    <div class="w-full bg-gray-200 rounded-lg aspect-square flex items-center justify-center">
+                        <span class="text-black font-bold">[MEME 9 PLACEHOLDER]</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in visible">
+                <a href="https://forms.google.com" target="_blank" class="shimmer inline-block orange-gradient text-black font-bold py-3 px-8 rounded-full transition transform hover:scale-105 hover:shadow-xl">
+                    Submit a Meme
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="relative py-10 jungle-bg" style="background-color: #4a7856;">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 mr-2 rounded-full orange-gradient flex items-center justify-center text-outline">
+                            <span class="text-xl font-bold">$</span>
+                        </div>
+                        <span class="text-2xl font-bold text-outline">$LEO</span>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="https://twitter.com" target="_blank" class="text-white hover:text-yellow-300 transition">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://t.me" target="_blank" class="text-white hover:text-yellow-300 transition">
+                        <i class="fab fa-telegram text-2xl"></i>
+                    </a>
+                    <a href="https://coinmarketcap.com" target="_blank" class="text-white hover:text-yellow-300 transition">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </a>
+                </div>
+                
+                <div class="text-sm text-white opacity-75">
+                    <p>© 2023 $LEO. All rights reserved.</p>
+                    <p class="mt-1">This is a meme coin. DYOR.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
