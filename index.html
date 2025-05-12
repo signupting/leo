@@ -841,11 +841,13 @@
             <div class="flex flex-col md:flex-row items-center gap-8 fade-in visible">
                 <!-- Left side: Visual -->
                 <div class="w-full md:w-1/2 flex flex-col items-center justify-center">
-                    <img src="./page2.png" alt="$LEO Sniffing Green Powder" class="w-96 h-96 object-contain floating-pop animated-bounceIn animated-delay-2" style="background:none;box-shadow:none;padding:0;margin:0;border-radius:0;animation-delay:0.2s;" />
-                    <div class="mt-8 w-full flex justify-center">
-                        <a href="https://x.com/leolemursol" target="_blank" class="shimmer cta-glow inline-block orange-gradient text-black font-bold py-6 px-16 rounded-full transition transform hover:scale-110 hover:shadow-xl text-3xl animated-fadeInUp animated-delay-4" style="font-size: 2.2rem;">
-                            Join $LEO on his journey
-                        </a>
+                    <div class="flex flex-col items-center w-full">
+                        <img src="./page2.png" alt="$LEO Sniffing Green Powder" class="w-96 h-96 object-contain floating-pop animated-bounceIn animated-delay-2 mx-auto" style="background:none;box-shadow:none;padding:0;margin:0 auto 0 auto;border-radius:0;animation-delay:0.2s;" />
+                        <div class="mt-8 w-full flex justify-center">
+                            <a href="https://x.com/leolemursol" target="_blank" class="shimmer cta-glow inline-block orange-gradient text-black font-bold py-6 px-16 rounded-full transition transform hover:scale-110 hover:shadow-xl text-3xl animated-fadeInUp animated-delay-4" style="font-size: 2.2rem;">
+                                Join $LEO on his journey
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <!-- Right side: Text -->
@@ -1036,21 +1038,36 @@
             });
         });
         
-        // Scroll animations
+        // Scroll animations - ENHANCED for wow factor
+        // Add more pronounced pop/bounce/fade effects and staggered delays
+
         document.addEventListener('DOMContentLoaded', () => {
             const fadeElements = document.querySelectorAll('.fade-in');
-            
+            const popElements = document.querySelectorAll('.animated-popInLeft');
+            const bounceElements = document.querySelectorAll('.animated-bounceIn');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
+                        // Add pop/bounce effect if present
+                        if (entry.target.classList.contains('animated-popInLeft')) {
+                            entry.target.classList.add('popInLeft-visible');
+                        }
+                        if (entry.target.classList.contains('animated-bounceIn')) {
+                            entry.target.classList.add('bounceIn-visible');
+                        }
                     }
                 });
             }, {
                 threshold: 0.1
             });
-            
             fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+            popElements.forEach(element => {
+                observer.observe(element);
+            });
+            bounceElements.forEach(element => {
                 observer.observe(element);
             });
         });
