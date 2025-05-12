@@ -589,21 +589,36 @@
             filter: brightness(1.12) drop-shadow(0 0 16px #FFD700cc);
             transition: transform 0.18s, filter 0.18s;
         }
-        .orange-card {
-            background: linear-gradient(135deg, #25643b 0%, #5E8C6A 100%) !important;
-            border: 2px solid #25643b !important;
+        .dark-card {
+            background: rgba(0,0,0,0.82) !important;
+            border: 2.5px solid #222 !important;
+            color: #fff !important;
+            font-size: 1.45rem !important;
+            font-weight: bold !important;
+            text-shadow: 0 2px 8px #000a, 0 0 2px #fff2;
         }
-        .jungle-text {
-            color: #F28C38 !important;
-            text-shadow: 0 2px 8px #fff8, 0 0 2px #FFD70044;
+        .dark-card h3, .dark-card .font-bold, .dark-card strong {
+            color: #fff !important;
+            font-size: 2.1rem !important;
+            font-weight: bold !important;
+            text-shadow: 0 2px 8px #000a, 0 0 2px #fff2;
         }
-        .orange-card h3, .orange-card .font-bold, .orange-card strong {
-            color: #FFD700 !important;
-            text-shadow: 0 2px 8px #F28C3888, 0 0 2px #25643b44;
+        .dark-card .orange-gradient {
+            background: #fff !important;
+            color: #222 !important;
         }
-        .orange-card .orange-gradient {
-            background: #25643b !important;
-            color: #FFD700 !important;
+        .about-dark-bg {
+            background: rgba(0,0,0,0.78) !important;
+            color: #fff !important;
+            font-size: 1.45rem !important;
+            font-weight: bold !important;
+            text-shadow: 0 2px 8px #000a, 0 0 2px #fff2;
+        }
+        .about-dark-bg h2, .about-dark-bg .font-bold, .about-dark-bg strong {
+            color: #fff !important;
+            font-size: 2.1rem !important;
+            font-weight: bold !important;
+            text-shadow: 0 2px 8px #000a, 0 0 2px #fff2;
         }
     </style>
 </head>
@@ -725,7 +740,7 @@
                 </div>
                 <!-- Right side: Text -->
                 <div class="w-full md:w-1/2 text-white flex items-center">
-                    <div class="bg-black bg-opacity-20 p-8 rounded-xl animated-fadeInUp animated-delay-3" style="font-size: 2rem; line-height: 1.5;">
+                    <div class="about-dark-bg p-8 rounded-xl animated-fadeInUp animated-delay-3" style="line-height: 1.5;">
                         <p class="mb-8">
                             $LEO is the biggest baller in the jungle, with a taste for the finer things in life—gold chains, fast cars, and memecoins.
                         </p>
@@ -762,7 +777,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto fade-in visible">
                 <!-- Step 1 -->
-                <div class="step-box orange-card jungle-text p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-1">
+                <div class="step-box dark-card p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-1">
                     <div class="absolute -top-4 -left-4 w-10 h-10 orange-gradient rounded-full flex items-center justify-center text-black font-bold border-2 border-black">1</div>
                     <h3 class="text-xl font-bold mb-3">Create a Wallet</h3>
                     <p>Download Metamask or your favorite Web3 wallet. Create an account and secure your recovery phrase.</p>
@@ -772,7 +787,7 @@
                 </div>
                 
                 <!-- Step 2 -->
-                <div class="step-box orange-card jungle-text p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-2">
+                <div class="step-box dark-card p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-2">
                     <div class="absolute -top-4 -left-4 w-10 h-10 orange-gradient rounded-full flex items-center justify-center text-black font-bold border-2 border-black">2</div>
                     <h3 class="text-xl font-bold mb-3">Get ETH</h3>
                     <p>Purchase Ethereum from your preferred exchange and transfer it to your wallet address.</p>
@@ -782,7 +797,7 @@
                 </div>
                 
                 <!-- Step 3 -->
-                <div class="step-box orange-card jungle-text p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-3">
+                <div class="step-box dark-card p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-3">
                     <div class="absolute -top-4 -left-4 w-10 h-10 orange-gradient rounded-full flex items-center justify-center text-black font-bold border-2 border-black">3</div>
                     <h3 class="text-xl font-bold mb-3">Connect to DEX</h3>
                     <p>Visit Uniswap and connect your wallet. Paste the $LEO contract address and set your slippage to 5%.</p>
@@ -792,7 +807,7 @@
                 </div>
                 
                 <!-- Step 4 -->
-                <div class="step-box orange-card jungle-text p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-4">
+                <div class="step-box dark-card p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-4">
                     <div class="absolute -top-4 -left-4 w-10 h-10 orange-gradient rounded-full flex items-center justify-center text-black font-bold border-2 border-black">4</div>
                     <h3 class="text-xl font-bold mb-3">Swap & HODL!</h3>
                     <p>Swap your ETH for $LEO tokens and hodl on tight for the jungle ride to riches!</p>
