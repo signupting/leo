@@ -589,6 +589,22 @@
             filter: brightness(1.12) drop-shadow(0 0 16px #FFD700cc);
             transition: transform 0.18s, filter 0.18s;
         }
+        .orange-card {
+            background: linear-gradient(135deg, #F28C38 0%, #FFD700 100%) !important;
+            border: 2px solid #F28C38 !important;
+        }
+        .jungle-text {
+            color: #25643b !important;
+            text-shadow: 0 2px 8px #fff8, 0 0 2px #FFD70044;
+        }
+        .orange-card h3, .orange-card .font-bold, .orange-card strong {
+            color: #25643b !important;
+            text-shadow: 0 2px 8px #fff8, 0 0 2px #FFD70044;
+        }
+        .orange-card .orange-gradient {
+            background: #FFD700 !important;
+            color: #25643b !important;
+        }
     </style>
 </head>
 <body>
@@ -746,7 +762,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto fade-in visible">
                 <!-- Step 1 -->
-                <div class="step-box bg-white text-black p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-1">
+                <div class="step-box orange-card jungle-text p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-1">
                     <div class="absolute -top-4 -left-4 w-10 h-10 orange-gradient rounded-full flex items-center justify-center text-black font-bold border-2 border-black">1</div>
                     <h3 class="text-xl font-bold mb-3">Create a Wallet</h3>
                     <p>Download Metamask or your favorite Web3 wallet. Create an account and secure your recovery phrase.</p>
@@ -756,7 +772,7 @@
                 </div>
                 
                 <!-- Step 2 -->
-                <div class="step-box bg-white text-black p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-2">
+                <div class="step-box orange-card jungle-text p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-2">
                     <div class="absolute -top-4 -left-4 w-10 h-10 orange-gradient rounded-full flex items-center justify-center text-black font-bold border-2 border-black">2</div>
                     <h3 class="text-xl font-bold mb-3">Get ETH</h3>
                     <p>Purchase Ethereum from your preferred exchange and transfer it to your wallet address.</p>
@@ -766,7 +782,7 @@
                 </div>
                 
                 <!-- Step 3 -->
-                <div class="step-box bg-white text-black p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-3">
+                <div class="step-box orange-card jungle-text p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-3">
                     <div class="absolute -top-4 -left-4 w-10 h-10 orange-gradient rounded-full flex items-center justify-center text-black font-bold border-2 border-black">3</div>
                     <h3 class="text-xl font-bold mb-3">Connect to DEX</h3>
                     <p>Visit Uniswap and connect your wallet. Paste the $LEO contract address and set your slippage to 5%.</p>
@@ -776,7 +792,7 @@
                 </div>
                 
                 <!-- Step 4 -->
-                <div class="step-box bg-white text-black p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-4">
+                <div class="step-box orange-card jungle-text p-6 rounded-xl shadow-lg border-2 border-black relative animated-fadeInUp animated-delay-4">
                     <div class="absolute -top-4 -left-4 w-10 h-10 orange-gradient rounded-full flex items-center justify-center text-black font-bold border-2 border-black">4</div>
                     <h3 class="text-xl font-bold mb-3">Swap & HODL!</h3>
                     <p>Swap your ETH for $LEO tokens and hodl on tight for the jungle ride to riches!</p>
